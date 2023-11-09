@@ -5,8 +5,8 @@ const hbs = require('hbs')
 const app = express();
 const path=require('path')
 const mongoose = require("mongoose");
-const port = process.env.PORT || 3000; 
-// Database
+const port = process.env.PORT || 7000; 
+// Database Connection
 const database = (module.exports = () => {
   const connectionParams = {
     //useNewUrlParser: true,
@@ -28,6 +28,7 @@ const database = (module.exports = () => {
 database();
 const Register=require("./models/registers");
 const { request } = require("http");
+const { register } = require("module");
 // app.listen(3000, () => {
 //   console.log("Server is running on port 3000");
 // });
@@ -41,9 +42,12 @@ app.use(express.urlencoded({extended:false}));
 app.get('/', (req, res)=>{ 
   res.render("index"); 
 }); 
+
+//Registration GET and POST
 app.get('/register', (req, res)=>{ 
   res.render("register"); 
 }); 
+
 app.post('/register', async (req, res)=>{ 
   try{
     // console.log(request.body.firstname);
@@ -71,6 +75,32 @@ app.post('/register', async (req, res)=>{
     res.status(400).send(error);
   }
 }); 
+
+//login GET and POST
+
+app.get('/login', (req, res)=>{ 
+  res.render("login"); 
+}); 
+
+app.post('/login', async(req,res)=>{
+  try {
+    const email=req.body.uname;
+    const password=req.body.psw;
+    //console.log(`${email} and password is ${password}`)
+    const useremail=await Register.findOne({email:email});
+    // res.send(useremail);
+    // console.log(useremail);
+    if(useremail.psw===password){
+      res.status(201).render("index");
+    }
+    else{
+      res.send("password are not matching")
+    }
+  } catch (error) {
+      res.status(400).send("invalid Email")
+  }
+})
+
 app.listen(port, (error) =>{ 
 if(!error) 
   console.log("Server is Successfully Running, and App is listening on port "+ port) 
