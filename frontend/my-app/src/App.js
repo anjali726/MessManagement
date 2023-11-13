@@ -1,10 +1,13 @@
 import Header from "./Components/header";
 import Sidebar from "./Components/Sidebar";
+import Login from './Components/Login';
+import Menu from "./Components/Menu";
+
 function App() {
   return (
     <div className="App">
-      <Header/>
-      <Sidebar/>
+      <Header/>[]
+      <Login/>
     </div>
   );
 }
