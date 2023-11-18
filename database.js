@@ -1,37 +1,15 @@
 
-
+require("dotenv").config();
 const express = require("express");
 const hbs = require('hbs')
 const app = express();
 const path=require('path')
-const mongoose = require("mongoose");
 const port = process.env.PORT || 7000; 
-// Database Connection
-const database = (module.exports = () => {
-  const connectionParams = {
-    //useNewUrlParser: true,
-    //useUnifiedTopology: true,
-  };
-  try {
-    mongoose.connect(
-      "mongodb+srv://garg:PlKeuOEjl5KZUhUs@cluster0.gjyxagg.mongodb.net/using?retryWrites=true&w=majority",
+const connectDB=require("./db/connect");
 
-      connectionParams
-    );
-    console.log("Database connected succesfully");
-  } catch (error) {
-    console.log(error);
-    console.log("Database connection failed");
-  }
-});
-
-database();
 const Register=require("./models/registers");
-const { request } = require("http");
-const { register } = require("module");
-// app.listen(3000, () => {
-//   console.log("Server is running on port 3000");
-// });
+// const { request } = require("http");
+// const { register } = require("module");
 const t_path=path.join(__dirname,'/templates/views')
 const p_path=path.join(__dirname,'/templates/partials')
 app.set('view engine', 'hbs')
@@ -42,6 +20,23 @@ app.use(express.urlencoded({extended:false}));
 app.get('/', (req, res)=>{ 
   res.render("index"); 
 }); 
+const startbackend=async() =>{
+  try {
+    await connectDB();
+    app.listen(port, () =>{ 
+      console.log("Server is Successfully Running, and App is listening on port "+ port) 
+    }); 
+  } catch (error) {
+    console.log("Error occurred, server can't start", error); 
+  }
+}
+startbackend();
+
+
+
+
+
+
 
 //Registration GET and POST
 app.get('/register', (req, res)=>{ 
@@ -50,8 +45,7 @@ app.get('/register', (req, res)=>{
 
 app.post('/register', async (req, res)=>{ 
   try{
-    // console.log(request.body.firstname);
-    // res.send(req.body.firstname);
+    await connectDB();
     const password=req.body.psw;
     const cpassword=req.body.pswrepeat;
     if(password==cpassword){
@@ -84,6 +78,7 @@ app.get('/login', (req, res)=>{
 
 app.post('/login', async(req,res)=>{
   try {
+    await connectDB();
     const email=req.body.uname;
     const password=req.body.psw;
     //console.log(`${email} and password is ${password}`)
@@ -101,10 +96,11 @@ app.post('/login', async(req,res)=>{
   }
 })
 
-app.listen(port, (error) =>{ 
-if(!error) 
-  console.log("Server is Successfully Running, and App is listening on port "+ port) 
-else
-  console.log("Error occurred, server can't start", error); 
-} 
-); 
+
+
+const menu_routes=require("./routes/menu");
+app.use("/api/menu",menu_routes);
+
+
+
+

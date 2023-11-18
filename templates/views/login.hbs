@@ -1,4 +1,4 @@
-//This is the login page of the website
+{{!-- This is the login page of the website --}}
 
 <!DOCTYPE html>
 <html>
@@ -6,7 +6,7 @@
 	/*set border to the form*/
 	
 	form {
-		border: 3px solid #f1f1f1;
+		{{!-- border: 3px solid #f1f1f1; --}}
 	}
 	/*assign full width inputs*/
 	
@@ -16,7 +16,7 @@
 		padding: 12px 20px;
 		margin: 8px 0;
 		display: inline-block;
-		border: 1px solid #ccc;
+		{{!-- border: 1px solid #ccc; --}}
 		box-sizing: border-box;
 	}
 	/*set a style for the buttons*/
@@ -57,7 +57,11 @@
 	/*set padding to the container*/
 	
 	.container {
+		width: 40%;
+  		margin: 0 auto; /* This centers the container horizontally */
 		padding: 16px;
+		background-color: rgb(236, 242, 248);
+		{{!-- border: 3px solid #f4efef; --}}
 	}
 	/*set the forgot password text*/
 	
@@ -80,12 +84,13 @@
 
 <body>
 
-	<h2>Login Form</h2>
+	
 	<!--Step 1 : Adding HTML-->
 	<form action="/login" method="POST">
-		
+	
 
-		<div class="container">
+		<div class="container" style="">
+			<h2>Login Form</h2>
 			<label><b>Username</b></label>
 			<input type="text" placeholder="Enter Username" name="uname" required>
 
@@ -96,7 +101,7 @@
 			<input type="checkbox" checked="checked"> Remember me
 		</div>
 
-		<div class="container" style="background-color:#f1f1f1">
+		<div class="container" >
 			<button type="button" class="cancelbtn">Cancel</button>
 			<span class="psw">Forgot <a href="#">password?</a></span>
 		</div>
@@ -104,4 +109,5 @@
 
 </body>
 
-</html>
+</html> 
+

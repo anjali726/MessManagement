@@ -1,0 +1,46 @@
+{
+  "menu": {
+    "Monday": {
+      "breakfast": "Scrambled Eggs with Toast",
+      "snack": "Fruit Salad",
+      "lunch": "Grilled Chicken Salad",
+      "dinner": "Spaghetti Bolognese"
+    },
+    "Tuesday": {
+      "breakfast": "Pancakes with Maple Syrup",
+      "snack": "Smoothie",
+      "lunch": "Vegetarian Wrap",
+      "dinner": "Baked Salmon with Roasted Vegetables"
+    },
+    "Wednesday": {
+      "breakfast": "Yogurt Parfait with Fresh Fruits",
+      "snack": "Trail Mix",
+      "lunch": "Quinoa and Black Bean Bowl",
+      "dinner": "Chicken Alfredo Pasta"
+    },
+    "Thursday": {
+      "breakfast": "Oatmeal with Berries",
+      "snack": "Greek Yogurt with Honey",
+      "lunch": "Caprese Sandwich",
+      "dinner": "Beef Stir-Fry with Broccoli"
+    },
+    "Friday": {
+      "breakfast": "Smoothie Bowl",
+      "snack": "Mixed Nuts",
+      "lunch": "Shrimp Caesar Salad",
+      "dinner": "Vegetable Lasagna"
+    },
+    "Saturday": {
+      "breakfast": "Bagel with Cream Cheese and Smoked Salmon",
+      "snack": "Cucumber Slices with Hummus",
+      "lunch": "Mushroom Risotto",
+      "dinner": "Teriyaki Chicken with Rice"
+    },
+    "Sunday": {
+      "breakfast": "Fruit Salad with Greek Yogurt",
+      "snack": "Yogurt Parfait",
+      "lunch": "Tofu Stir-Fry",
+      "dinner": "Pesto Pasta with Grilled Vegetables"
+    }
+  }
+}
