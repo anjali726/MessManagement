@@ -5,9 +5,12 @@ import App from './App';
 import Complaints from "./Components/Complaints";
 import Home from "./Components/Home"
 // import { Switch, Route } from 'react-router-dom';
-import Login from "./Components/login";
+import Login from "./Components/Login";
 // import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
+import AdminPage from './Components/AdminPage';
+import AdminMenu from './Components/AdminMenu';
+import AdminHome from './Components/AdminHome';
 const appRouter = createBrowserRouter([
   {
       path : "/",
@@ -26,6 +29,14 @@ const appRouter = createBrowserRouter([
               path : "/complaints",
               element: <Complaints />
           },
+          {
+            path : "/Admin/complaints",
+            element: <AdminPage/>
+          },
+          {
+            path : "/Admin/Home",
+            element: <AdminHome/>
+          }
         ],
   },
   
@@ -36,3 +47,6 @@ root.render(<RouterProvider router={appRouter} />)
 
 
 // const root = ReactDOM.createRoot(document.getElementById("root"));
+
+
+

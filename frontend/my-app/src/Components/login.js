@@ -51,7 +51,7 @@ const Login = () => {
         <input className="mx-14 my-2 w-8/12 rounded-sm px-4 bg-slate-500 p-1" ref={password} type="password" placeholder='Password' />
         <p className='text-red-600 font-bold font-sans py-2 my-2 mx-14 px-4'>{errorMessage}</p>
         <button className="my-2 mx-14 p-1 w-8/12 rounded-sm bg-blue-800 px-4" onClick={handleButtonClick}>{isSignIn ? "Sign In" : "Sign Up"}</button>
-        <p onClick={handleSignIn} className='cursor-pointer py-8 my-2 mx-14 px-4'>{isSignIn ? "New User? Sign Up Now" : "Already a user?Sign In Now"}</p>
+        <p onClick={handleSignIn} className='cursor-pointer py-8 my-2 mx-14 px-4'>{isSignIn ? "New to Netflix? Sign Up Now" : "Already a member?Sign In Now"}</p>
       </form>
       
     </div>

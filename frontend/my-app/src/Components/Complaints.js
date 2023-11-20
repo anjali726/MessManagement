@@ -1,12 +1,11 @@
 import React from 'react'
-
+import SideBar from './SideBar'
 import ComplaintPage from './ComplaintPage'
-import Sidebar from './Sidebar'
 
 const Complaints = () => {
   return (
     <div>
-      <Sidebar/>
+      <SideBar/>
       <ComplaintPage/>
     </div>
   )

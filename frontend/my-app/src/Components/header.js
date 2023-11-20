@@ -14,7 +14,7 @@ const navigation = [
     return classes.filter(Boolean).join(' ')
   }
 
-const header = () => {
+const Header = () => {
   return (
     <Disclosure as="nav" className="bg-gray-800">
     {({ open }) => (
@@ -153,4 +153,4 @@ const header = () => {
   )
 }
 
-export default header
+export default Header

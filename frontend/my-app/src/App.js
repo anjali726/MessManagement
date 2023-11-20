@@ -1,6 +1,6 @@
 // import ReactDOM from 'react-dom/client';
 // import Header from "./Components/Header";
-import Sidebar from "./Components/Sidebar";
+import SideBar from "./Components/SideBar";
 // import ComplaintPage from "./Components/ComplaintPage";
 // import Menu from "./Components/Menu"
 // import { Switch, Route } from 'react-router-dom';

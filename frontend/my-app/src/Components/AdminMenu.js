@@ -1,11 +1,11 @@
 import React from 'react'
 import MenuCard, {HighMenu} from './MenuCard'
 
-const Menu = () => {
+const AdminMenu = () => {
     const StudMenu=HighMenu(MenuCard);
   return (
     <div className='absolute w-screen'>
-    <img className='absolute -my-[950px] w-screen h-screen  opacity-100 -z-30  ml-[80px] ' src='https://img.freepik.com/free-photo/top-close-up-view-vegetables-tomatoes-with-pedicels-garlic-bell-peppers-lemon-oil-onion_140725-72203.jpg'></img>
+    <img className='absolute -my-[950px] h-screen  opacity-100 -z-30 w-full mx-[80px] ' src='https://img.freepik.com/free-photo/top-close-up-view-vegetables-tomatoes-with-pedicels-garlic-bell-peppers-lemon-oil-onion_140725-72203.jpg'></img>
         <div>
             <h1 className='font-extrabold text-center text-6xl ml-[400px] mb-10 -my-[850px] font-serif'>Today's Mess Menu</h1>
         </div>
@@ -20,15 +20,15 @@ const Menu = () => {
                 <option value="Sunday">Sunday</option> 
             </select>
         </div>
-        <div className=' ml-[380px] my-10 flex flex-wrap'>
-            <StudMenu isAdmin={false}/>
-            <StudMenu isAdmin={false}/>
-            <StudMenu isAdmin={false}/>
-            <StudMenu isAdmin={false}/>
+        <div className=' ml-[280px] my-10 flex flex-wrap'>
+            <StudMenu isAdmin={true}/>
+            <StudMenu isAdmin={true}/>
+            <StudMenu isAdmin={true}/>
+            <StudMenu isAdmin={true}/>
         </div>
 
     </div>
   )
 }
 
-export default Menu
+export default AdminMenu

@@ -26,7 +26,7 @@ const ComplaintCard = () => {
   };
 
   return (
-    <div className='flex flex-col w-1/3 ml-[120px]'>
+    <div className='flex flex-col w-1/3 ml-[120px] '>
       <div className='border-4 border-blue-300 rounded-3xl mb-10 p-10'>
         <h3 className='font-bold text-lg pb-4'>User_Name</h3>
         <div className={`h-16 overflow-hidden ${showFullText ? 'h-auto' : ''}`}>
@@ -59,6 +59,29 @@ const ComplaintCard = () => {
       </div>
     </div>
   );
+};
+
+export const AdminComplaint = (ComplaintCard) => {
+  const [AddComment,setComment] = useState(false)
+  const handleClick = ()=>{
+    setComment(true)
+  }
+  return ({Complaint,setComment})=>{
+
+    const handleClick = ()=>{
+      setComment();
+    }
+      return (
+        <div className='flex flex-auto relative '>
+          
+          <ComplaintCard/>
+          {!Complaint && <button onClick={handleClick} className='-ml-[170px] mt-[410px] bg-black text-white rounded-lg m-64 p-2'>Add Comment</button>}
+          {Complaint && <input className='-ml-[280px] mt-[410px] bg-green-300 text-black rounded-lg m-64 p-2' type='text'></input>}
+          {Complaint && <button onClick={handleClick} className='-ml-[270px] mt-[410px] bg-black text-white rounded-lg m-64 p-2'>Delete</button>}
+        </div>
+        
+      )
+    }
 };
 
 export default ComplaintCard;

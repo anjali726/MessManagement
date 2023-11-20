@@ -1,12 +1,11 @@
 import React from 'react'
-import Sidebar from './Sidebar'
+import SideBar from './SideBar'
 import Menu from './Menu'
-
 
 const Home = () => {
   return (
     <div>
-      <Sidebar/>
+      <SideBar/>
       <Menu/>
     </div>
   )
