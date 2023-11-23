@@ -38,7 +38,6 @@ const Login = () => {
     <div>
 
       {/* <Header /> */}
-
       <div className='absolute'>
         <img className='w-screen h-screen' src="https://img.freepik.com/free-photo/top-close-up-view-vegetables-tomatoes-with-pedicels-garlic-bell-peppers-lemon-oil-onion_140725-72203.jpg" alt="netflix" />
       </div>
@@ -58,4 +57,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Login 

@@ -5,12 +5,14 @@ import App from './App';
 import Complaints from "./Components/Complaints";
 import Home from "./Components/Home"
 // import { Switch, Route } from 'react-router-dom';
-import Login from "./Components/Login";
+
 // import reportWebVitals from './reportWebVitals';
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom"
 import AdminPage from './Components/AdminPage';
 import AdminMenu from './Components/AdminMenu';
 import AdminHome from './Components/AdminHome';
+import AddCompPage from './Components/AddCompPage';
+import Login from './Components/Login';
 const appRouter = createBrowserRouter([
   {
       path : "/",
@@ -18,7 +20,7 @@ const appRouter = createBrowserRouter([
       children : [
           {
               path: "/",
-              element : <Login />
+              element : <Login/>
           },
           {
               path : "/home",
@@ -36,6 +38,10 @@ const appRouter = createBrowserRouter([
           {
             path : "/Admin/Home",
             element: <AdminHome/>
+          },
+          {
+            path : "/addComplaints",
+            element: <AddCompPage/>
           }
         ],
   },
